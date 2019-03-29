@@ -112,11 +112,14 @@ int cabinetSelection;
                   cout << "This cabinet contains plates, bowls, and eating utensils.\n";
                   cout << "\n";
                   break;
+                  //Cabinet option 5.
+                  cout << "You return to the entrance of the kitchen.\n";
+                  cout << "\n";
+                  break;
                 }
               }
               while (cabinetSelection < 5);
               break;
-              //NEED TO RETURN TO PREVIOUS MENU
 
               //Explore the pantry.
               case 3:
