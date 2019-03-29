@@ -115,6 +115,7 @@ int cabinetSelection;
                 }
               }
               while (cabinetSelection < 5);
+              break;
               //NEED TO RETURN TO PREVIOUS MENU
 
               //Explore the pantry.
