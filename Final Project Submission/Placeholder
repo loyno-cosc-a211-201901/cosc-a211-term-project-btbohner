@@ -1,0 +1,151 @@
+
+  //Display Main Menu
+  showMainMenu();
+  cin >> mainMenuSelection;
+  cout << "\n";
+
+//If play is selected
+  if (mainMenuSelection == 1)
+  {
+    cout << "You find yourself in a dimly lit studio apartment with four areas to explore.\n";
+    showApartmentMenu();
+    cout << "Where will you go? ";
+    cin >> apartmentMenuSelection;
+    cout << "\n";
+  }
+
+    if (apartmentMenuSelection == 1)
+    {
+      cout << "You enter the kitchen and see three obvious candidates for inspection.\n";
+      showKitchenMenu();
+      cout << "What would you like to see? ";
+      cin >> kitchenMenuSelection;
+      cout << "\n";
+    }
+
+      if (kitchenMenuSelection == 1)
+      {
+        do
+        {
+        cout << "You approach the stove to find a pot of boiling water.\n";
+        cout << "\n";
+        showKitchenMenu();
+        cout << "What would you like to see? ";
+        cin >> kitchenMenuSelection;
+        cout << "\n";
+        }
+        while (kitchenMenuSelection == 1);
+      }
+
+      if (kitchenMenuSelection == 2)
+      {
+        cout << "You find four cabinets under the sink.\n";
+        showCabinetMenu();
+        cout << "Which will you open? ";
+        cin >> cabinetSelection;
+        cout << "\n";
+      }
+
+        if (cabinetSelection == 1)
+        {
+          do
+          {
+          cout << "This cabinet contains various pots and pans, as well as a trail of rat droppings.\n";
+          cout << "\n";
+          showCabinetMenu();
+          cout << "Which will you open? ";
+          cin >> cabinetSelection;
+          cout << "\n";
+          }
+          while (cabinetSelection == 1 || 2 || 3 || 4);
+        }
+        else if (cabinetSelection == 2)
+        {
+          do
+          {
+            cout << "This cabinet contains various household cleaning supplies (Windex, Kaboom, Etc.)\n";
+            cout << "\n";
+            showCabinetMenu();
+            cout << "Which will you open? ";
+            cin >> cabinetSelection;
+            cout << "\n";
+          }
+          while (cabinetSelection == 1 || 2 || 3 || 4);
+        }
+        else if (cabinetSelection == 3)
+        {
+          do
+          {
+            cout << "This cabinet contains assorted sponges, rubber gloves, brushes, etc. Presumably to be used with the cleaning supplies.\n";
+            cout << "\n";
+            showCabinetMenu();
+            cout << "Which will you open? ";
+            cin >> cabinetSelection;
+            cout << "\n";
+          }
+          while (cabinetSelection == 1 || 2 || 3 || 4);
+        }
+        else if (cabinetSelection == 4)
+        {
+          do
+          {
+            cout << "This cabinet contains plates, bowls, and eating utensils.\n";
+            cout << "\n";
+            showCabinetMenu();
+            cout << "Which will you open? ";
+            cin >> cabinetSelection;
+            cout << "\n";
+          }
+          while (cabinetSelection == 1 || 2 || 3 || 4);
+        }
+        else if (cabinetSelection == 5)
+        {
+          cout << "You enter the kitchen and see three obvious candidates for inspection.\n";
+          showKitchenMenu();
+          cout << "What would you like to see? ";
+          cin >> kitchenMenuSelection;
+          cout << "\n";
+        }
+
+
+  else if (mainMenuSelection == 2)
+  {
+  cout << "About goes here\n";
+  }
+  else
+  {
+    exit(0);
+  }
+
+}
+void showMainMenu()
+{
+  cout << "1. Play\n";
+  cout << "2. About\n";
+  cout << "3. Exit\n";
+  cout << "Please make a selection: ";
+}
+
+void showApartmentMenu()
+{
+  cout << "1. Kitchen\n";
+  cout << "2. Den\n";
+  cout << "3. Bedroom\n";
+  cout << "4. Hallway\n";
+}
+
+void showKitchenMenu()
+{
+  cout << "1. Stove\n";
+  cout << "2. Sink Cabinets\n";
+  cout << "3. Pantry\n";
+  cout << "4. Go Back\n";
+}
+void showCabinetMenu()
+{
+  cout << "1. Furthest to the left\n";
+  cout << "2. Second from the left\n";
+  cout << "3. Second from the right\n";
+  cout << "4. Furthest to the right\n";
+  cout << "5. Go Back\n";
+}
