@@ -59,6 +59,7 @@ int cabinetSelection;
     cout << "Where will you go? ";
     cin >> apartmentMenuSelection;
     cout << "\n";
+    while (apartmentMenuSelection < 5)
     do
     {
       switch (apartmentMenuSelection)
@@ -72,7 +73,6 @@ int cabinetSelection;
         cout << "What would you like to see? ";
         cin >> kitchenMenuSelection;
         cout << "\n";
-
             switch (kitchenMenuSelection)
             {
               //Boiling water on stove.
@@ -87,8 +87,9 @@ int cabinetSelection;
               cout << "You find four cabinets under the sink.\n";
               showCabinetMenu();
               cout << "Which will you open? ";
-              cin >> cabinetSelection;
               cout << "\n";
+              cin >> cabinetSelection;
+              break;
 
                 switch (cabinetSelection)
                 {
@@ -124,11 +125,15 @@ int cabinetSelection;
               break;
 
             }
-          }
-          while (kitchenMenuSelection < 4);
+        }
+        while (apartmentMenuSelection < 5);
+        //Case 2 apartment menu Den
       }
     }
-    while (apartmentMenuSelection < 5);
+    while (kitchenMenuSelection < 4);
+    {
+      exit (0);
+    }
   }
 
 
