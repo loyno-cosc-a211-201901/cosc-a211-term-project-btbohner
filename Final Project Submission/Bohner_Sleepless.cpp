@@ -50,6 +50,9 @@ int powerButton;
   cout << "############################################################################################################################################################\n";
 
   //Display Main Menu
+  cout << "Welcome to the world of Sleepless.\n";
+  do
+  {
     showMainMenu();
     cin >> mainMenuSelection;
     cout << "\n";
@@ -167,7 +170,7 @@ int powerButton;
                 cout << "The screen shows nothing but static, which seems to be illuminating the den.\n";
                 cout << "\n";
                 break;
-                //Couch option.
+                //Couch option. Also allows user to turn TV ON or OFF.
                 case 3:
                 cout << "You look towards the couch.\n";
                 cout << "The green leather is torn, and falling apart.\n";
@@ -178,7 +181,7 @@ int powerButton;
                 cout << "Press it? ";
                 cin >> powerButton;
                 cout << "\n";
-
+                  //Power button on remote TV on or off.
                   switch (powerButton)
                   {
                     //Yes. Turn power off.
@@ -202,12 +205,16 @@ int powerButton;
             cout << "\n";
             break;
 
+            //Case 3 is the bedroom.
+            case 3:
+            cout << ""
 
           }
       }
       while (kitchenMenuSelection == 4 || denSelection == 4);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
     }
-
+  }
+  while (apartmentMenuSelection == 5);
 }
   void showMainMenu()
   {
