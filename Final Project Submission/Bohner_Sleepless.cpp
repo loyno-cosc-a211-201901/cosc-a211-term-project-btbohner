@@ -7,6 +7,9 @@ void showApartmentMenu();
 void showKitchenMenu();
 void showCabinetMenu();
 void showDenMenu();
+void showBedroomMenu();
+void showDresserMenu();
+void showDeskMenu();
 
 int main ()
 {
@@ -17,6 +20,10 @@ int kitchenMenuSelection;
 int cabinetSelection;
 int denSelection;
 int powerButton;
+int bedroomSelection;
+int dresserSelection;
+int readNote;
+int deskSelection;
 
   //Display title art.
   cout << " \n";
@@ -126,6 +133,11 @@ int powerButton;
                     cout << "\n";
                     break;
                   }
+                  while (cabinetSelection < 1 || cabinetSelection > 5)
+                  {
+                    cout << "Your selection must be between 1 and 5.\n";
+                    break;
+                  }
                 }
                 while (cabinetSelection != 5);
                 break;
@@ -136,6 +148,11 @@ int powerButton;
                 cout << "\n";
                 break;
 
+              }
+              while (kitchenMenuSelection < 1 || kitchenMenuSelection > 4)
+              {
+                cout << "Your selection must be between 1 and 4.\n";
+                break;
               }
             }
             while (kitchenMenuSelection != 4);
@@ -176,6 +193,8 @@ int powerButton;
                 cout << "The green leather is torn, and falling apart.\n";
                 cout << "You spot a remote control for the TV. It is completely covered in tape, except for the power button.\n";
                 cout << "\n";
+                do
+                {
                 cout << "1. Yes\n";
                 cout << "2. No\n";
                 cout << "Press it? ";
@@ -196,8 +215,20 @@ int powerButton;
                     cout << "\n";
                     break;
                   }
+                  while (powerButton < 1 || powerButton > 2)
+                  {
+                    cout << "Your selection must be either 1 or 2.\n";
+                    break;
+                  }
+                }
+                while (powerButton < 1 || powerButton > 2);
                 break;
 
+              }
+              while (denSelection < 1 || denSelection > 4)
+              {
+                cout << "Your selection must be between 1 and 4.\n";
+                break;
               }
             }
             while (denSelection != 4);
@@ -207,14 +238,159 @@ int powerButton;
 
             //Case 3 is the bedroom.
             case 3:
-            cout << ""
+            cout << "You walk deeper into the apartment.\n";
+            cout << "Passing a foldable partition you find yourself in what would be the bedroom.\n";
+            cout << "You find a wooden dresser, a PC on top of a glass desk with two drawers, and \n";
+            cout << "a mattress laid on top of some painted wooden pallets.\n";
+            cout << "\n";
+            do
+            {
+              showBedroomMenu();
+              cout << "What would you like to see? ";
+              cin >> bedroomSelection;
+              cout << "\n";
+
+              switch (bedroomSelection)
+              {
+                //Dresser option.
+                case 1:
+                cout << "You approach the dresser.\n";
+                cout << "The paint which seemingly used to be blue, has taken on a bluish tint,\n";
+                cout << "The handles on each of the four drawers are made of tarnished brass.\n";
+                cout << "\n";
+                do
+                {
+                  showDresserMenu();
+                  cout << "Which will you open? \n";
+                  cin >> dresserSelection;
+                  cout << "\n";
+
+                    switch (dresserSelection)
+                    {
+                      //Top left.
+                      case 1:
+                      cout << "This drawer contains a messy assortment of men's underwear and a few pairs of socks\n";
+                      cout << "\n";
+                      break;
+                      //Top right.
+                      case 2:
+                      cout << "This drawer contains two neatly folded stacks of Tshirts.\n";
+                      cout << "You find a crumpled up note tucked beneath a few of the shirts\n";
+                      cout << "\n";
+                      do
+                      {
+                      cout << "1. Yes\n";
+                      cout << "2. No\n";
+                      cout << "Read the note? ";
+                      cin >> readNote;
+                      cout << "\n";
+                        //Read note yes/no
+                        switch (readNote)
+                        {
+                          //Case 1 is if user chooses to read note.
+                          case 1:
+                          cout << "You unfold the note.\n";
+                          cout << "ENTER WHAT NOTE SAYS HERE\n";
+                          cout << "\n";
+                          break;
+                          //Case 2 is if user chooses not to read note.
+                          case 2:
+                          cout << "You return the note to its original resting place.\n";
+                          cout << "\n";
+                          break;
+                        }
+                        while (readNote < 1 || readNote > 2)
+                        {
+                          cout <<"Your selection must be either one or 2.\n";
+                          break;
+                        }
+                      }
+                      while (readNote < 1 || readNote > 2);
+                      break;
+                      //Bottom left.
+                      case 3:
+                      cout << "This drawer contains a combination of shorts, sweatpants, and jeans. All of which seem to vary in size.\n";
+                      cout << "\n";
+                      break;
+                      //Bottom right.
+                      case 4:
+                      cout << "It seems as though this drawer is the counterpart to the one next to it.\n";
+                      cout << "You find a limited selection of sweaters, hoodies, and longsleeve Tshirts.\n";
+                      cout << "\n";
+                      break;
+                    }
+                    while (dresserSelection < 1 || dresserSelection > 4)
+                    {
+                      cout << "Your selection must be between 1 and 5\n";
+                      break;
+                    }
+                }
+                while (dresserSelection != 5);
+                break;
+                //Desk option.
+                case 2:
+                cout << "On top of the desk is a high resolution monitor displaying an image of a dark futuristic city, a keyboard, and a pair of speakers.\n";
+                cout << "The PC appears to be password protected.\n";
+                cout << "On either side of the desk you find a drawer.\n";
+                cout << "\n";
+                do
+                {
+                  showDeskMenu();
+                  cout << "Will you open one? ";
+                  cin >> deskSelection;
+                  cout << "\n";
+                    //Drawer Selection.
+                    switch (deskSelection)
+                    {
+                      //Case 1 is the left drawer.
+                      case 1:
+                      cout << "This drawer contains a selection of notepads and writing implements, as well as a pocket knife.\n";
+                      break;
+                      //Case 2 is the right drawer.
+                      case 2:
+                      cout << "This drawer contains a half empty bottle of cheap bourbon, and a single glass.\n";
+                      break;
+                    }
+                    while (deskSelection < 1 ||deskSelection > 3)
+                    {
+                      cout << "Your selection must be between 1 and 3.\n";
+                      break;
+                    }
+                }
+                while (deskSelection != 3);
+                break;
+                case 3:
+                cout << "The mattress is loosely covered by a set of rough, gray sheets that seem too large for it.\n";
+                cout << "At the head of the bed there are two heavily used pillows, covered with purple pillowcases.\n";
+                break;
+              }
+              while (bedroomSelection < 1 || bedroomSelection > 4)
+              {
+                cout << "Your selection must be between 1 and 4.\n";
+                break;
+              }
+            }
+            while (bedroomSelection != 4 || deskSelection == 3 );
+            cout << "You return to the entrance of the apartment.\n";
+            cout << "\n";
+            break;
 
           }
+          while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5)
+          {
+            cout << "Your selection must be between 1 and 5.\n";
+            break;
+          }
       }
-      while (kitchenMenuSelection == 4 || denSelection == 4);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
+      while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5 || kitchenMenuSelection == 4 || denSelection == 4 || bedroomSelection == 4);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
+    }
+    while (mainMenuSelection < 1 || mainMenuSelection > 3)
+    {
+      cout << "Your selection must be between 1 and 3.\n";
+      break;
     }
   }
-  while (apartmentMenuSelection == 5);
+  while (mainMenuSelection < 1 || mainMenuSelection > 3 || apartmentMenuSelection == 5);
 }
   void showMainMenu()
   {
@@ -256,4 +432,28 @@ int powerButton;
     cout << "2. TV\n";
     cout << "3. Couch\n";
     cout << "4. Go Back\n";
+  }
+
+  void showBedroomMenu()
+  {
+    cout << "1. Dresser\n";
+    cout << "2. Desk\n";
+    cout << "3. Bed\n";
+    cout << "4. Go Back\n";
+  }
+
+  void showDresserMenu()
+  {
+    cout << "1. Top left\n";
+    cout << "2. Top right\n";
+    cout << "3. Bottom left\n";
+    cout << "4. Bottom right\n";
+    cout << "5. Go Back\n";
+  }
+
+  void showDeskMenu()
+  {
+    cout << "1. Left drawer\n";
+    cout << "2. Right drawer\n";
+    cout << "3. Go Back\n";
   }
