@@ -47,95 +47,93 @@ int cabinetSelection;
   cout << "############################################################################################################################################################\n";
 
   //Display Main Menu
-  showMainMenu();
-  cin >> mainMenuSelection;
-  cout << "\n";
-
-  switch (mainMenuSelection)
-  {
-    case 1:
-    cout << "You find yourself in a dimly lit studio apartment with four areas to explore.\n";
-    showApartmentMenu();
-    cout << "Where will you go? ";
-    cin >> apartmentMenuSelection;
+    showMainMenu();
+    cin >> mainMenuSelection;
     cout << "\n";
-    do
+
+    switch (mainMenuSelection)
     {
-      switch (apartmentMenuSelection)
+      case 1:
+      cout << "You find yourself in a dimly lit studio apartment with four areas to explore.\n";
+      do
       {
-        //Case 1 represents the kitchen selection.
-        case 1:
-        cout << "You enter the kitchen and see three obvious candidates for inspection.\n";
-        do
-        {
-        showKitchenMenu();
-        cout << "What would you like to see? ";
-        cin >> kitchenMenuSelection;
+        showApartmentMenu();
+        cout << "Where will you go? ";
+        cin >> apartmentMenuSelection;
         cout << "\n";
-
-            switch (kitchenMenuSelection)
+          switch (apartmentMenuSelection)
+          {
+            //Case 1 represents the kitchen selection.
+            case 1:
+            cout << "You enter the kitchen and see three obvious candidates for inspection.\n";
+            do
             {
-              //Boiling water on stove.
-              case 1:
-              cout << "You approach the stove to find a pot of boiling water.\n";
-              cout << "\n";
-              break;
-              //Four cabinet options.
-              case 2:
-              do
-              {
-              cout << "You find four cabinets under the sink.\n";
-              showCabinetMenu();
-              cout << "Which will you open? ";
-              cin >> cabinetSelection;
-              cout << "\n";
+            showKitchenMenu();
+            cout << "What would you like to see? ";
+            cin >> kitchenMenuSelection;
+            cout << "\n";
 
-                switch (cabinetSelection)
+                switch (kitchenMenuSelection)
                 {
-                  //Cabinet option 1.
+                  //Boiling water on stove.
                   case 1:
-                  cout << "This cabinet contains various pots and pans, as well as a trail of rat droppings.\n";
+                  cout << "You approach the stove to find a pot of boiling water.\n";
                   cout << "\n";
                   break;
-                  //Cabinet option 2.
+                  //Four cabinet options.
                   case 2:
-                  cout << "This cabinet contains various household cleaning supplies (Windex, Kaboom, Etc.)\n";
+                  do
+                  {
+                  cout << "You find four cabinets under the sink.\n";
+                  showCabinetMenu();
+                  cout << "Which will you open? ";
+                  cin >> cabinetSelection;
                   cout << "\n";
+
+                    switch (cabinetSelection)
+                    {
+                      //Cabinet option 1.
+                      case 1:
+                      cout << "This cabinet contains various pots and pans, as well as a trail of rat droppings.\n";
+                      cout << "\n";
+                      break;
+                      //Cabinet option 2.
+                      case 2:
+                      cout << "This cabinet contains various household cleaning supplies (Windex, Kaboom, Etc.)\n";
+                      cout << "\n";
+                      break;
+                      //Cabinet option 3.
+                      case 3:
+                      cout << "This cabinet contains assorted sponges, rubber gloves, brushes, etc. Presumably to be used with the cleaning supplies.\n";
+                      cout << "\n";
+                      break;
+                      //Cabinet option 4.
+                      case 4:
+                      cout << "This cabinet contains plates, bowls, and eating utensils.\n";
+                      cout << "\n";
+                      break;
+                      //Cabinet option 5.
+                      cout << "You return to the entrance of the kitchen.\n";
+                      cout << "\n";
+                      break;
+                    }
+                  }
+                  while (cabinetSelection != 5);
                   break;
-                  //Cabinet option 3.
+
+                  //Explore the pantry.
                   case 3:
-                  cout << "This cabinet contains assorted sponges, rubber gloves, brushes, etc. Presumably to be used with the cleaning supplies.\n";
+                  cout << "The pantry contains an odd assortment of spices, a half eaten loaf of bread, and various packaged snacks.\n";
                   cout << "\n";
                   break;
-                  //Cabinet option 4.
-                  case 4:
-                  cout << "This cabinet contains plates, bowls, and eating utensils.\n";
-                  cout << "\n";
-                  break;
-                  //Cabinet option 5.
-                  cout << "You return to the entrance of the kitchen.\n";
-                  cout << "\n";
-                  break;
+
                 }
-              }
-              while (cabinetSelection < 5);
-              break;
-
-              //Explore the pantry.
-              case 3:
-              cout << "The pantry contains....ENTER FOOD OPTIONS HERE\n";
-              cout << "\n";
-              break;
-
             }
+            while (kitchenMenuSelection != 4);
           }
-          while (kitchenMenuSelection < 4);
       }
+      while (kitchenMenuSelection == 4);
     }
-    while (apartmentMenuSelection < 5);
-  }
-
-
 
 }
   void showMainMenu()
