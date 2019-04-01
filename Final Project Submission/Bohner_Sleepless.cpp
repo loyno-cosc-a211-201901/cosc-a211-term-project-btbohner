@@ -1,29 +1,31 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 //Prototype Functions
-void showMainMenu();
-void showApartmentMenu();
-void showKitchenMenu();
-void showCabinetMenu();
-void showDenMenu();
-void showBedroomMenu();
-void showDresserMenu();
-void showDeskMenu();
+void showMainMenu();            //Shows main game menu.
+void showApartmentMenu();       //Shows the menu of available paths in apartment.
+void showKitchenMenu();         //Shows the menu of available paths in kitchen.
+void showCabinetMenu();         //Shows the menu of available cabinets to look through.
+void showDenMenu();             //Shows the menu of available paths in den.
+void showBedroomMenu();         //Shows the menu of available paths in bedroom.
+void showDresserMenu();         //Shows the menu of available drawers to look through.
+void showDeskMenu();            //Shows the menu of available items to look at on the desk.
 
 int main ()
 {
 //Variables
-int mainMenuSelection;
-int apartmentMenuSelection;
-int kitchenMenuSelection;
-int cabinetSelection;
-int denSelection;
-int powerButton;
-int bedroomSelection;
-int dresserSelection;
-int readNote;
-int deskSelection;
+int mainMenuSelection;          //Stores user selection for main menu.
+int apartmentMenuSelection;     //Stores user selection for apartment menu.
+int kitchenMenuSelection;       //Stores user selection for kitchen menu.
+int cabinetSelection;           //Stores user selection for cabinet menu.
+int denSelection;               //Stores user selection for den menu.
+int powerButton;                //Stores user selection for remote on/off function.
+int bedroomSelection;           //Stores user selection for bedroom menu.
+int dresserSelection;           //Stores user selection for dresser menu.
+int readNote;                   //Stores user selection for reading the note found in the dresser.
+int deskSelection;              //Stores user selection for desk menu.
 
   //Display title art.
   cout << " \n";
@@ -359,6 +361,7 @@ int deskSelection;
                 }
                 while (deskSelection != 3);
                 break;
+                //Mattress option.
                 case 3:
                 cout << "The mattress is loosely covered by a set of rough, gray sheets that seem too large for it.\n";
                 cout << "At the head of the bed there are two heavily used pillows, covered with purple pillowcases.\n";
@@ -370,7 +373,7 @@ int deskSelection;
                 break;
               }
             }
-            while (bedroomSelection != 4 || deskSelection == 3 );
+            while (bedroomSelection != 4);
             cout << "You return to the entrance of the apartment.\n";
             cout << "\n";
             break;
@@ -402,58 +405,79 @@ int deskSelection;
 
   void showApartmentMenu()
   {
+    cout << "\n";
+    cout << "###########\n";
     cout << "1. Kitchen\n";
     cout << "2. Den\n";
     cout << "3. Bedroom\n";
     cout << "4. Hallway\n";
     cout << "5. Exit\n";
+    cout << "###########\n";
   }
 
   void showKitchenMenu()
   {
+    cout << "\n";
+    cout << "################\n";
     cout << "1. Stove\n";
     cout << "2. Sink Cabinets\n";
     cout << "3. Pantry\n";
     cout << "4. Go Back\n";
+    cout << "################\n";
   }
 
   void showCabinetMenu()
   {
+    cout << "\n";
+    cout << "########################\n";
     cout << "1. Furthest to the left\n";
     cout << "2. Second from the left\n";
     cout << "3. Second from the right\n";
     cout << "4. Furthest to the right\n";
     cout << "5. Go Back\n";
+    cout << "########################\n";
   }
 
   void showDenMenu()
   {
+    cout << "\n";
+    cout << "##########\n";
     cout << "1. Rug\n";
     cout << "2. TV\n";
     cout << "3. Couch\n";
     cout << "4. Go Back\n";
+    cout << "##########\n";
   }
 
   void showBedroomMenu()
   {
+    cout << "\n";
+    cout << "##########\n";
     cout << "1. Dresser\n";
     cout << "2. Desk\n";
     cout << "3. Bed\n";
     cout << "4. Go Back\n";
+    cout << "##########\n";
   }
 
   void showDresserMenu()
   {
+    cout << "\n";
+    cout << "###############\n";
     cout << "1. Top left\n";
     cout << "2. Top right\n";
     cout << "3. Bottom left\n";
     cout << "4. Bottom right\n";
     cout << "5. Go Back\n";
+    cout << "###############\n";
   }
 
   void showDeskMenu()
   {
+    cout << "\n";
+    cout << "###############\n";
     cout << "1. Left drawer\n";
     cout << "2. Right drawer\n";
     cout << "3. Go Back\n";
+    cout << "###############\n";
   }
