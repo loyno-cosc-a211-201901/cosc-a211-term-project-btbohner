@@ -12,6 +12,7 @@ void showDenMenu();             //Shows the menu of available paths in den.
 void showBedroomMenu();         //Shows the menu of available paths in bedroom.
 void showDresserMenu();         //Shows the menu of available drawers to look through.
 void showDeskMenu();            //Shows the menu of available items to look at on the desk.
+void showHallwayMenu();         //Shows the menu of available paths in hallway.
 
 int main ()
 {
@@ -26,6 +27,7 @@ int bedroomSelection;           //Stores user selection for bedroom menu.
 int dresserSelection;           //Stores user selection for dresser menu.
 int readNote;                   //Stores user selection for reading the note found in the dresser.
 int deskSelection;              //Stores user selection for desk menu.
+int hallwaySelection;           //Stores user selection for hallway menu.
 
   //Display title art.
   cout << " \n";
@@ -292,7 +294,17 @@ int deskSelection;              //Stores user selection for desk menu.
                           //Case 1 is if user chooses to read note.
                           case 1:
                           cout << "You unfold the note.\n";
-                          cout << "ENTER WHAT NOTE SAYS HERE\n";
+                          cout << "\n";
+                          //Contents of the note inside the dresser.
+                          cout << "    To anyone who finds this note,\n";
+                          cout << "  I want you to know that I know what you are doing.\n";
+                          cout << "  While I do not approve of people snooping, I do undersand, and I hope\n";
+                          cout << "  that you find whatever it is you are looking for. Because I fear that\n";
+                          cout << "  should you ever leave this place, you will not be the same.\n";
+                          cout << "  I wish you the best of luck in your endeavors.\n";
+                          cout << "\n";
+                          cout << "  All the best,\n";
+                          cout << "  B.\n";
                           cout << "\n";
                           break;
                           //Case 2 is if user chooses not to read note.
@@ -377,6 +389,41 @@ int deskSelection;              //Stores user selection for desk menu.
             cout << "You return to the entrance of the apartment.\n";
             cout << "\n";
             break;
+            //Case 4 is the hallway selection
+            case 4:
+            cout << "You exit the through the entrance of the apartment into what you assume is a hallway.\n";
+            cout << "The hallway is nearly pitch black, save for a brightly lit room to the right.\n";
+            do
+            {
+              showHallwayMenu();
+              cout << "Will you proceed to the lit room?\n";
+              cin >> hallwaySelection;
+              cout << "\n";
+
+              switch (hallwaySelection)
+              {
+                //Case 1 is if user proceeds to the lit room.
+                case 1:
+                cout << "You walk toward the lit room at the end of the hallway.\n";
+                cout << "Upon entering the room you realize that it is a bathroom.\n";
+                cout << "The walls are dirty and stained. The grout between the green tiles\n";
+                cout << "which line the walls seem as if they have not been cleaned in years.\n";
+                cout << "You notice a medicine cabinet behind the mirror, who's door is slightly ajar.\n";
+                cout << "There is also a "
+                break;
+                //Case 2 is if the user does not proceed to the lit room.
+                case 2:
+                cout << "You go back inside of the apartment.\n";
+                break;
+              }
+              while (hallwaySelection < 1 || hallwaySelection > 2)
+              {
+                cout << "Your selection must be either 1 or 2.\n";
+                break;
+              }
+            }
+            while (hallwaySelection != 2);
+            break;
 
           }
           while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5)
@@ -385,7 +432,7 @@ int deskSelection;              //Stores user selection for desk menu.
             break;
           }
       }
-      while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5 || kitchenMenuSelection == 4 || denSelection == 4 || bedroomSelection == 4);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
+      while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5 || kitchenMenuSelection == 4 || denSelection == 4 || bedroomSelection == 4 || hallwaySelection == 2);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
     }
     while (mainMenuSelection < 1 || mainMenuSelection > 3)
     {
@@ -480,4 +527,13 @@ int deskSelection;              //Stores user selection for desk menu.
     cout << "2. Right drawer\n";
     cout << "3. Go Back\n";
     cout << "###############\n";
+  }
+
+  void showHallwayMenu()
+  {
+    cout << "\n";
+    cout << "######\n";
+    cout << "1.Yes\n";
+    cout << "2. No\n";
+    cout << "######\n";
   }
