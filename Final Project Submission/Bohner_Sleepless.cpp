@@ -78,6 +78,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
       {
         //Display available paths in apartment.
         showApartmentMenu();
+        cout << "Your input MUST be a number.\n";
         cout << "Where will you go? ";
         //Hold user selection for room path.
         cin >> apartmentMenuSelection;
@@ -91,6 +92,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
             {
             //Display available paths in kitchen.
             showKitchenMenu();
+            cout << "Your input MUST be a number.\n";
             cout << "What would you like to see? ";
             //Hold user selection for kitchen path
             cin >> kitchenMenuSelection;
@@ -111,6 +113,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                 cout << "\n";
                 //Display available paths for cabinet selection
                 showCabinetMenu();
+                cout << "Your input MUST be a number.\n";
                 cout << "Which will you open? ";
                 //Holds user selection for cabinet path.
                 cin >> cabinetSelection;
@@ -181,6 +184,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
             {
             //Display available paths for the den.
             showDenMenu();
+            cout << "Your input MUST be a number.\n";
             cout << "What would you like to see? ";
             //Hold user selection for den path.
             cin >> denSelection;
@@ -210,6 +214,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                 {
                 cout << "1. Yes\n";
                 cout << "2. No\n";
+                cout << "Your input MUST be a number.\n";
                 cout << "Press it? ";
                 //Hold user selection for the remote on/off
                 cin >> powerButton;
@@ -261,6 +266,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
             {
               //Display available paths for the bedroom
               showBedroomMenu();
+              cout << "Your input MUST be a number.\n";
               cout << "What would you like to see? ";
               //Holds user selection for bedroom path.
               cin >> bedroomSelection;
@@ -278,6 +284,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                 {
                   //Display available paths for the dresser drawers.
                   showDresserMenu();
+                  cout << "Your input MUST be a number.\n";
                   cout << "Which will you open? \n";
                   //Holds user selection for which drawer to open.
                   cin >> dresserSelection;
@@ -299,6 +306,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                       {
                       cout << "1. Yes\n";
                       cout << "2. No\n";
+                      cout << "Your input MUST be a number.\n";
                       cout << "Read the note? ";
                       cin >> readNote;
                       cout << "\n";
@@ -365,6 +373,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                 {
                   //Display the available paths for the desk
                   showDeskMenu();
+                  cout << "Your input MUST be a number.\n";
                   cout << "Will you open one? ";
                   //Hold user selection for which drawer to open on the desk.
                   cin >> deskSelection;
@@ -413,6 +422,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
             {
               //Display available paths for the hallway
               showHallwayMenu();
+              cout << "Your input MUST be a number.\n";
               cout << "Will you proceed to the lit room?\n";
               //Hold user selection for hallway path selection.
               cin >> hallwaySelection;
@@ -431,6 +441,7 @@ int bathroomSelection;          //Stores user selection for bathroom menu.
                 {
                   //Display available paths for the bathroom
                   showBathroomMenu();
+                  cout << "Your input MUST be a number.\n";
                   cout << "Will you peek inside the medicine cabinet?\n";
                   //Holds user selection for the medicine cabinet.
                   cin >> bathroomSelection;
