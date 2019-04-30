@@ -13,6 +13,7 @@ void showBedroomMenu();         //Shows the menu of available paths in bedroom.
 void showDresserMenu();         //Shows the menu of available drawers to look through.
 void showDeskMenu();            //Shows the menu of available items to look at on the desk.
 void showHallwayMenu();         //Shows the menu of available paths in hallway.
+void showBathroomMenu();        //Shows the menu of available paths in the bathroom.
 
 int main ()
 {
@@ -28,6 +29,7 @@ int dresserSelection;           //Stores user selection for dresser menu.
 int readNote;                   //Stores user selection for reading the note found in the dresser.
 int deskSelection;              //Stores user selection for desk menu.
 int hallwaySelection;           //Stores user selection for hallway menu.
+int bathroomSelection;          //Stores user selection for bathroom menu.
 
   //Display title art.
   cout << " \n";
@@ -67,7 +69,6 @@ int hallwaySelection;           //Stores user selection for hallway menu.
     showMainMenu();
     cin >> mainMenuSelection;
     cout << "\n";
-
     switch (mainMenuSelection)
     {
       case 1:
@@ -75,8 +76,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
       cout << "\n";
       do
       {
+        //Display available paths in apartment.
         showApartmentMenu();
         cout << "Where will you go? ";
+        //Hold user selection for room path.
         cin >> apartmentMenuSelection;
         cout << "\n";
           switch (apartmentMenuSelection)
@@ -86,8 +89,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
             cout << "You enter the kitchen and see three obvious candidates for inspection.\n";
             do
             {
+            //Display available paths in kitchen.
             showKitchenMenu();
             cout << "What would you like to see? ";
+            //Hold user selection for kitchen path
             cin >> kitchenMenuSelection;
             cout << "\n";
 
@@ -104,8 +109,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 {
                 cout << "You find four cabinets under the sink.\n";
                 cout << "\n";
+                //Display available paths for cabinet selection
                 showCabinetMenu();
                 cout << "Which will you open? ";
+                //Holds user selection for cabinet path.
                 cin >> cabinetSelection;
                 cout << "\n";
 
@@ -172,8 +179,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
             cout << "\n";
             do
             {
+            //Display available paths for the den.
             showDenMenu();
             cout << "What would you like to see? ";
+            //Hold user selection for den path.
             cin >> denSelection;
             cout << "\n";
 
@@ -202,6 +211,7 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 cout << "1. Yes\n";
                 cout << "2. No\n";
                 cout << "Press it? ";
+                //Hold user selection for the remote on/off
                 cin >> powerButton;
                 cout << "\n";
                   //Power button on remote TV on or off.
@@ -249,8 +259,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
             cout << "\n";
             do
             {
+              //Display available paths for the bedroom
               showBedroomMenu();
               cout << "What would you like to see? ";
+              //Holds user selection for bedroom path.
               cin >> bedroomSelection;
               cout << "\n";
 
@@ -264,8 +276,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 cout << "\n";
                 do
                 {
+                  //Display available paths for the dresser drawers.
                   showDresserMenu();
                   cout << "Which will you open? \n";
+                  //Holds user selection for which drawer to open.
                   cin >> dresserSelection;
                   cout << "\n";
 
@@ -349,8 +363,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 cout << "\n";
                 do
                 {
+                  //Display the available paths for the desk
                   showDeskMenu();
                   cout << "Will you open one? ";
+                  //Hold user selection for which drawer to open on the desk.
                   cin >> deskSelection;
                   cout << "\n";
                     //Drawer Selection.
@@ -395,8 +411,10 @@ int hallwaySelection;           //Stores user selection for hallway menu.
             cout << "The hallway is nearly pitch black, save for a brightly lit room to the right.\n";
             do
             {
+              //Display available paths for the hallway
               showHallwayMenu();
               cout << "Will you proceed to the lit room?\n";
+              //Hold user selection for hallway path selection.
               cin >> hallwaySelection;
               cout << "\n";
 
@@ -409,7 +427,36 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 cout << "The walls are dirty and stained. The grout between the green tiles\n";
                 cout << "which line the walls seem as if they have not been cleaned in years.\n";
                 cout << "You notice a medicine cabinet behind the mirror, who's door is slightly ajar.\n";
-                cout << "There is also a "
+                do
+                {
+                  //Display available paths for the bathroom
+                  showBathroomMenu();
+                  cout << "Will you peek inside the medicine cabinet?\n";
+                  //Holds user selection for the medicine cabinet.
+                  cin >> bathroomSelection;
+                  cout << "\n";
+
+                  switch (bathroomSelection)
+                  {
+                    //Case 1 is if the user chooses to look inside the medicine cabinet.
+                    case 1:
+                    cout << "You slowly open the door to the medicine cabinet.\n";
+                    cout << "It contains various empty prescription containers.\n";
+                    cout << "Each of them seem to have been emptied long ago\n";
+                    break;
+                    //Case 2 is if the user chooses not to look inside the medicine cabinet
+                    case 2:
+                    cout << "You return to the entrance of the bathroom.\n";
+                    break;
+                  }
+                  while (bathroomSelection < 1 || bathroomSelection > 2)
+                  {
+                    cout << "Your selection must be either 1 or 2.\n";
+                  break;
+                  }
+
+                }
+                while (bathroomSelection != 2);
                 break;
                 //Case 2 is if the user does not proceed to the lit room.
                 case 2:
@@ -421,10 +468,14 @@ int hallwaySelection;           //Stores user selection for hallway menu.
                 cout << "Your selection must be either 1 or 2.\n";
                 break;
               }
+              break;
             }
             while (hallwaySelection != 2);
             break;
-
+            case 5:
+            cout << "Thank you for playing Sleepless!!!";
+            return 0;
+            break;
           }
           while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5)
           {
@@ -433,6 +484,16 @@ int hallwaySelection;           //Stores user selection for hallway menu.
           }
       }
       while (apartmentMenuSelection < 1 || apartmentMenuSelection > 5 || kitchenMenuSelection == 4 || denSelection == 4 || bedroomSelection == 4 || hallwaySelection == 2);  //ADD OR STATEMENT HERE TO DEAL WITH THE REST OF THE ROOMS
+      break;
+      //Case 2 produces the about section of the game, and exits afterwards.
+      case 2:
+      cout << "Sleepless was originally created in 2019 by Blake Bohner for a computer sciences course at Loyola University\n";
+      cout << "The basic idea was to create a menu based game where a player would be able to explore an abandoned apartment.\n";
+      cout << "While there is no defined end, or win condition, for the game it is designed to showcase the ability of a menu\n";
+      cout << "based system to still generate curiosity and a willingness to explore in a world dominated by more advanced\n";
+      cout << "products in the video game category.\n";
+      cout << "\n";
+      break;
     }
     while (mainMenuSelection < 1 || mainMenuSelection > 3)
     {
@@ -440,8 +501,9 @@ int hallwaySelection;           //Stores user selection for hallway menu.
       break;
     }
   }
-  while (mainMenuSelection < 1 || mainMenuSelection > 3 || apartmentMenuSelection == 5);
+  while (mainMenuSelection < 1 || mainMenuSelection > 3);
 }
+
   void showMainMenu()
   {
     cout << "1. Play\n";
@@ -530,6 +592,15 @@ int hallwaySelection;           //Stores user selection for hallway menu.
   }
 
   void showHallwayMenu()
+  {
+    cout << "\n";
+    cout << "######\n";
+    cout << "1.Yes\n";
+    cout << "2. No\n";
+    cout << "######\n";
+  }
+
+  void showBathroomMenu()
   {
     cout << "\n";
     cout << "######\n";
